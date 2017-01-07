@@ -4,6 +4,7 @@
 
 ## List
 
+* [指標](https://github.com/YanHaoChen/Learning-C/tree/master/pointer)
 * [檔案讀取](https://github.com/YanHaoChen/Learning-C/tree/master/file)
 * [結構](https://github.com/YanHaoChen/Learning-C/tree/master/struct)
 * [演算法](https://github.com/YanHaoChen/Learning-C/tree/master/algorithm)
