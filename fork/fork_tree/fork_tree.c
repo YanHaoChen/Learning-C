@@ -6,22 +6,23 @@
 int main(){
 
 	pid_t b_child, d_child, e_child;
-	char *a;
-	a = "My parent is a.";
+	long int a;
+
+	a = (long)getpid();
 
 	switch(b_child = fork()){
 		case -1:
 			exit(0);
 		case 0:
-			printf("I'm b. PID=%ld %s \n",(long)getpid(),a);
+			printf("I'm b. PID=%ld My parent is=%ld \n",(long)getpid(),a);
 			pid_t c,f;
-			char *b;
-			b = "My parent is b.";
+			long int b;
+			b = (long)getpid();
 			switch (c = fork()) {
 				case -1:
 					exit(0);
 				case 0:
-					printf("I'm c. PID=%ld %s \n",(long)getpid(),b);
+					printf("I'm c. PID=%ld My parent is=%ld \n",(long)getpid(),b);
 					return 0;
 				default:
 					wait(NULL);
@@ -32,8 +33,23 @@ int main(){
 				case -1:
 					exit(0);
 				case 0:
-					printf("I'm f. PID=%ld %s\n",(long)getpid(),b);
-					return 0;
+					printf("I'm f. PID=%ld My parent is=%ld\n",(long)getpid(),b);
+					pid_t g;
+				 	long int f;
+					f = (long)getpid();
+
+					switch (g = fork()) {
+						case -1:
+							exit(0);
+						case 0:
+							printf("I'm g. PID=%ld My parent is=%ld\n",(long)getpid(),f);
+							return 0;
+						default:
+							wait(NULL);
+							return 0;
+							break;
+					}
+
 				default:
 					wait(NULL);
 					break;
@@ -49,7 +65,7 @@ int main(){
 		case -1:
 			exit(0);
 		case 0:
-			printf("I'm d. PID=%ld %s\n",(long)getpid(),a);
+			printf("I'm d. PID=%ld My parent is=%ld\n",(long)getpid(),a);
 			return 0;
 		default:
 			wait(NULL);
@@ -60,21 +76,8 @@ int main(){
 		case -1:
 			exit(0);
 		case 0:
-			printf("I'm e. PID=%ld %s\n",(long)getpid(),a);
-			pid_t g;
-			char *e;
-			e = "My parent is e.";
-			switch (g = fork()) {
-				case -1:
-					exit(0);
-				case 0:
-					printf("I'm g. PID=%ld %s\n",(long)getpid(),e);
-					return 0;
-				default:
-					wait(NULL);
-					return 0;
-					break;
-			}
+			printf("I'm e. PID=%ld My parent is=%ld\n",(long)getpid(),a);
+			return 0;
 		default:
 			wait(NULL);
 			break;
