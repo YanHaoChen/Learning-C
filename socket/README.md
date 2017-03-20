@@ -11,7 +11,7 @@
 ```shell
 # 編譯
 $ gcc server.c -o server.o
-$ gcc client.c -o client.0
+$ gcc client.c -o client.o
 
 # 執行
 $ ./server.o
@@ -31,7 +31,7 @@ $ ./client.o
 ```shell
 # 編譯
 $ gcc server.c -o server.o
-$ gcc client.c -o client.0
+$ gcc client.c -o client.o
 
 # 執行
 $ ./server.o
