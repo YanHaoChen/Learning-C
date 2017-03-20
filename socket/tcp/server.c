@@ -50,7 +50,7 @@ int main(int argc, char *argv[]) {
             if (buffer[0] == '\0') {
     			t2 = clock();
     			printf("Client send completed!\n");
-    			printf("pacaket number: %d\n", dataframCount);
+    			printf("segment number: %d\n", dataframCount);
     			printf("Time interval: %lf sec\n", (t2-t1)/(double)(CLOCKS_PER_SEC));
     			printf("Throughput: %lf Mbps\n",(sizeCount/((t2-t1)/(double)(CLOCKS_PER_SEC)))/1000);
     			return 0;
