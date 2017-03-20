@@ -42,7 +42,7 @@ int main() {
     sizeCount +=1;
     close(sock);
     printf("Server IP: %s\n", Server_Address);
-    printf("Datagram number: %d\n",outputpacket);
+    printf("Segment number: %d\n",outputpacket);
     printf("Time interval: %lf sec\n", (t2-t1)/(double)(CLOCKS_PER_SEC));
     printf("Throughput: %lf Mbps\n",(sizeCount/((t2-t1)/(double)(CLOCKS_PER_SEC)))/1000);
 
