@@ -23,4 +23,13 @@ $ sudo ./raw_socket_udp.o
 $ gcc raw_socket_tcp.c -o raw_socket_tcp.o
 # 執行
 $ sudo ./raw_socket_tcp.o
-```![hw3](https://github.com/YanHaoChen/Learning-C/blob/master/raw_socket/images/hw3.png?raw=true)
+```
+![hw3](https://github.com/YanHaoChen/Learning-C/blob/master/raw_socket/images/hw3.png?raw=true)
+### IP Spoof Attack
+```shell
+# 編譯
+$ gcc injection.c -o injection.o
+# 執行
+$ sudo ./injection.o 192.168.12.11 8.8.8.8
+```
+![hw4](https://github.com/YanHaoChen/Learning-C/blob/master/raw_socket/images/hw4.png?raw=true)
